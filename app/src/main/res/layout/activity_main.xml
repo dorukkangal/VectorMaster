@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context="com.sdsmdg.harjot.vectormasterdemo.MainActivity">
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/text"
@@ -30,7 +30,7 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <com.sdsmdg.harjot.vectormaster.VectorMasterView
+        <com.dorukkangal.vectormaster.VectorMasterView
             android:id="@+id/vector_master"
             android:layout_width="60dp"
             android:layout_height="60dp"
@@ -39,7 +39,7 @@
             android:scaleY="0.8"
             app:vector_src="@drawable/ic_cloud_lightning" />
 
-        <com.sdsmdg.harjot.vectormaster.VectorMasterView
+        <com.dorukkangal.vectormaster.VectorMasterView
             android:id="@+id/vector_master_1"
             android:layout_width="60dp"
             android:layout_height="60dp"
@@ -48,14 +48,14 @@
             android:scaleY="0.8"
             app:vector_src="@drawable/hourglass_vector" />
 
-        <com.sdsmdg.harjot.vectormaster.VectorMasterView
+        <com.dorukkangal.vectormaster.VectorMasterView
             android:id="@+id/vector_master_2"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_margin="10dp"
             app:vector_src="@drawable/search_back_vector" />
 
-        <com.sdsmdg.harjot.vectormaster.VectorMasterView
+        <com.dorukkangal.vectormaster.VectorMasterView
             android:id="@+id/vector_master_3"
             android:layout_width="60dp"
             android:layout_height="60dp"

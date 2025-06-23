@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.sdsmdg.harjot.vectormasterdemo"
+    namespace = "com.dorukkangal.vectormasterdemo"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.sdsmdg.harjot.vectormasterdemo"
+        applicationId = "com.dorukkangal.vectormasterdemo"
         minSdk = 21
         targetSdk = 35
         versionCode = 1
