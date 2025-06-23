@@ -1,9 +1,5 @@
 package com.dorukkangal.vectormaster.enums;
 
-/**
- * Created by Harjot on 20-Jun-17.
- */
-
 public enum TintMode {
     ADD,
     MULTIPLY,

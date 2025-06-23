@@ -2,9 +2,10 @@ package com.dorukkangal.vectormasterdemo;
 
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.dorukkangal.vectormaster.VectorMasterView;
 import com.dorukkangal.vectormaster.models.GroupModel;
@@ -55,19 +56,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         typeface = Typeface.createFromAsset(getAssets(), "fonts/adequate.ttf");
-        text = (TextView) findViewById(R.id.text);
+        text = findViewById(R.id.text);
         text.setTypeface(typeface);
 
-        lightningView = (VectorMasterView) findViewById(R.id.vector_master);
+        lightningView = findViewById(R.id.vector_master);
         animateLightning();
 
-        hourglassView = (VectorMasterView) findViewById(R.id.vector_master_1);
+        hourglassView = findViewById(R.id.vector_master_1);
         animateHourglass();
 
-        searchBackView = (VectorMasterView) findViewById(R.id.vector_master_2);
+        searchBackView = findViewById(R.id.vector_master_2);
         animateSearchBack();
 
-        rainView = (VectorMasterView) findViewById(R.id.vector_master_3);
+        rainView = findViewById(R.id.vector_master_3);
         animateRain();
 
     }
@@ -81,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         lightningModel.setTrimPathStart(0.0f);
 
         Timer timer = new Timer();
-        timer.scheduleAtFixedRate(new TimerTask() {
+        timer.schedule(new TimerTask() {
             @Override
             public void run() {
                 countLightning++;
@@ -97,12 +98,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     lightningModel.setTrimPathEnd(trimEnd);
                     lightningModel.setTrimPathStart(trimStart);
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            lightningView.update();
-                        }
-                    });
+                    runOnUiThread(() -> lightningView.update());
                 }
             }
         }, 500, 1000 / 60);
@@ -118,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
         translationY = -24;
 
         Timer timer = new Timer();
-        timer.scheduleAtFixedRate(new TimerTask() {
+        timer.schedule(new TimerTask() {
             @Override
             public void run() {
                 if (state == 0) {
@@ -151,12 +147,7 @@ public class MainActivity extends AppCompatActivity {
                         state = 0;
                     }
                 }
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        hourglassView.update();
-                    }
-                });
+                runOnUiThread(() -> hourglassView.update());
             }
         }, 500, 1000 / 60);
 
@@ -169,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
         final PathModel arrowDown = searchBackView.getPathModelByName("arrow_head_bottom");
 
         Timer timer = new Timer();
-        timer.scheduleAtFixedRate(new TimerTask() {
+        timer.schedule(new TimerTask() {
             @Override
             public void run() {
                 count++;
@@ -202,12 +193,7 @@ public class MainActivity extends AppCompatActivity {
                     arrowUp.setTrimPathEnd(arrowHeadTopTrimEnd);
                     arrowDown.setTrimPathEnd(arrowHeadBottomTrimEnd);
 
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            searchBackView.update();
-                        }
-                    });
+                    runOnUiThread(() -> searchBackView.update());
                 }
 
             }
@@ -220,7 +206,7 @@ public class MainActivity extends AppCompatActivity {
         final PathModel rainRight = rainView.getPathModelByName("rain_right");
 
         Timer timer = new Timer();
-        timer.scheduleAtFixedRate(new TimerTask() {
+        timer.schedule(new TimerTask() {
             @Override
             public void run() {
                 rainCount_C++;
@@ -269,16 +255,9 @@ public class MainActivity extends AppCompatActivity {
                 rainRight.setTrimPathEnd(rainTrimEnd_R);
                 rainRight.setTrimPathStart(rainTrimStart_R);
 
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        rainView.update();
-                    }
-                });
+                runOnUiThread(() -> rainView.update());
 
             }
         }, 500, 1000 / 60);
-
     }
-
 }

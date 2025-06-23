@@ -1,6 +1,5 @@
 package com.dorukkangal.vectormaster;
 
-
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;

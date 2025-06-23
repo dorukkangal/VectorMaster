@@ -1,5 +1,6 @@
 plugins {
     id("com.android.library")
+    id("org.jetbrains.kotlin.android")
     id("maven-publish")
 }
 
@@ -31,8 +32,9 @@ android {
 }
 
 dependencies {
-    implementation("com.android.support:appcompat-v7:28.0.0")
-    androidTestImplementation("com.android.support.test:runner:1.0.2")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:2.1.21")
+    runtimeOnly("androidx.appcompat:appcompat:1.7.1")
+    androidTestImplementation("androidx.test:runner:1.6.2")
     testImplementation("junit:junit:4.13.2")
 }
 

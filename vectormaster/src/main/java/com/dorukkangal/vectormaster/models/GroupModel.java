@@ -1,6 +1,5 @@
 package com.dorukkangal.vectormaster.models;
 
-
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 

@@ -1,6 +1,5 @@
 package com.dorukkangal.vectormaster;
 
-
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Canvas;

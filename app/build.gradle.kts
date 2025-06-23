@@ -1,5 +1,6 @@
 plugins {
     id("com.android.application")
+    id("kotlin-android")
 }
 
 android {
@@ -28,9 +29,9 @@ android {
 }
 
 dependencies {
-    implementation("com.android.support:appcompat-v7:28.0.0")
-    implementation("com.android.support:appcompat-v7:28.0.0")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:2.1.21")
+    implementation("androidx.appcompat:appcompat:1.7.1")
     implementation(project(":vectormaster"))
-    androidTestImplementation("com.android.support.test:runner:1.0.2")
+    androidTestImplementation("androidx.test:runner:1.6.2")
     testImplementation("junit:junit:4.13.2")
 }
